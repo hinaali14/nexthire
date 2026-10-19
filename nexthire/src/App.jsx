@@ -1,21 +1,45 @@
-import {useEffect, useState } from "react";
+
+import { useEffect, useState } from "react";
+
 import Login from "./Login";
 import Signup from "./Signup";
 import Dashboard from "./Dashboard";
 import ResumeAnalyzer from "./ResumeAnalyzer";
+import MockInterview from "./MockInterview";
+import InterviewHistory from "./InterviewHistory";
 
 function App() {
   const [currentPage, setCurrentPage] = useState("login");
 
   useEffect(() => {
-  const openResume = () => setCurrentPage("resume");
+    function openDashboard() {
+      setCurrentPage("dashboard");
+    }
 
-  window.addEventListener("open-resume-analyzer", openResume);
+    function openResume() {
+      setCurrentPage("resume");
+    }
 
-  return () => {
-    window.removeEventListener("open-resume-analyzer", openResume);
-  };
-}, []);
+    function openMockInterview() {
+      setCurrentPage("mock-interview");
+    }
+
+    function openHistory() {
+      setCurrentPage("history");
+    }
+
+    window.addEventListener("open-dashboard", openDashboard);
+    window.addEventListener("open-resume-analyzer", openResume);
+    window.addEventListener("open-mock-interview", openMockInterview);
+    window.addEventListener("open-interview-history", openHistory);
+
+    return () => {
+      window.removeEventListener("open-dashboard", openDashboard);
+      window.removeEventListener("open-resume-analyzer", openResume);
+      window.removeEventListener("open-mock-interview", openMockInterview);
+      window.removeEventListener("open-interview-history", openHistory);
+    };
+  }, []);
 
   function handleLogin() {
     setCurrentPage("dashboard");
@@ -23,6 +47,15 @@ function App() {
 
   function handleSignup() {
     setCurrentPage("signup");
+  }
+
+  if (currentPage === "login") {
+    return (
+      <Login
+        onLogin={handleLogin}
+        onSignup={handleSignup}
+      />
+    );
   }
 
   if (currentPage === "signup") {
@@ -34,12 +67,20 @@ function App() {
     );
   }
 
+  if (currentPage === "dashboard") {
+    return <Dashboard />;
+  }
+
   if (currentPage === "resume") {
     return <ResumeAnalyzer />;
   }
 
-  if (currentPage === "dashboard") {
-    return <Dashboard />;
+  if (currentPage === "mock-interview") {
+    return <MockInterview />;
+  }
+
+  if (currentPage === "history") {
+    return <InterviewHistory />;
   }
 
   return (

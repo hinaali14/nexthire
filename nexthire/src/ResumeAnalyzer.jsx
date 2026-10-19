@@ -30,6 +30,18 @@ function ResumeAnalyzer() {
   const [showPreview, setShowPreview] = useState(false);
   const [error, setError] = useState("");
 
+  function openPage(page) {
+    if (page === "mock-interview") {
+      window.dispatchEvent(new Event("open-mock-interview"));
+    } else if (page === "dashboard") {
+      window.dispatchEvent(new Event("open-dashboard"));
+    } else if (page === "resume") {
+      window.dispatchEvent(new Event("open-resume-analyzer"));
+    } else {
+      window.dispatchEvent(new Event("open-interview-history"));
+    }
+  }
+
   function handleFile(file) {
     setError("");
     setShowPreview(false);
@@ -57,7 +69,6 @@ function ResumeAnalyzer() {
       return;
     }
 
-    // UI demo only: no real AI analysis is performed.
     setError("");
     setShowPreview(true);
   }
@@ -80,7 +91,7 @@ function ResumeAnalyzer() {
         <nav className="navigation">
           <button
             className="nav-item"
-            onClick={() => (window.location.hash = "#dashboard")}
+            onClick={() => openPage("dashboard")}
           >
             <LayoutDashboard size={20} />
             Dashboard
@@ -93,7 +104,7 @@ function ResumeAnalyzer() {
 
           <button
             className="nav-item"
-            onClick={() => (window.location.hash = "#mock-interview")}
+            onClick={() => openPage("mock-interview")}
           >
             <MessageSquare size={20} />
             Mock Interview
@@ -101,7 +112,7 @@ function ResumeAnalyzer() {
 
           <button
             className="nav-item"
-            onClick={() => (window.location.hash = "#history")}
+            onClick={() => openPage("history")}
           >
             <History size={20} />
             Interview History
@@ -111,12 +122,16 @@ function ResumeAnalyzer() {
         <div className="sidebar-bottom">
           <div className="upgrade-card">
             <Sparkles size={24} />
+
             <h3>Ready to level up?</h3>
-            <p>Practice smarter and prepare for your dream job.</p>
+
+            <p>
+              Practice smarter and prepare for your dream job.
+            </p>
 
             <button
               className="upgrade-button"
-              onClick={() => (window.location.hash = "#mock-interview")}
+              onClick={() => openPage("mock-interview")}
             >
               Start practicing <ArrowRight size={16} />
             </button>
@@ -129,6 +144,7 @@ function ResumeAnalyzer() {
 
           <div className="user-profile">
             <div className="avatar">H</div>
+
             <div>
               <strong>Hena Ali</strong>
               <p>Free Plan</p>
@@ -139,12 +155,18 @@ function ResumeAnalyzer() {
 
       <main className="main-content resume-main">
         <header className="topbar">
-          <p className="breadcrumb">Workspace / Resume Analyzer</p>
+          <p className="breadcrumb">
+            Workspace / Resume Analyzer
+          </p>
 
           <div className="topbar-right">
-            <button className="icon-button" aria-label="Notifications">
+            <button
+              className="icon-button"
+              aria-label="Notifications"
+            >
               <Bell size={20} />
             </button>
+
             <div className="avatar">H</div>
           </div>
         </header>
@@ -152,10 +174,14 @@ function ResumeAnalyzer() {
         <section className="resume-heading">
           <div>
             <p className="eyebrow">YOUR CAREER TOOLKIT</p>
-            <h1>Resume Analyzer <Sparkles size={24} /></h1>
+
+            <h1>
+              Resume Analyzer <Sparkles size={24} />
+            </h1>
+
             <p className="subtitle">
-              Make your resume stand out and take one step closer to your
-              dream job.
+              Make your resume stand out and take one step closer to
+              your dream job.
             </p>
           </div>
 
@@ -189,6 +215,7 @@ function ResumeAnalyzer() {
               <span className="document-line long" />
               <span className="document-line" />
               <span className="document-line short" />
+
               <div className="document-check">
                 <CheckCircle2 size={23} />
               </div>
@@ -203,7 +230,9 @@ function ResumeAnalyzer() {
         <div className="resume-section-heading">
           <div>
             <h2>Start with your resume</h2>
-            <p>Upload your document and tell us about your target role.</p>
+            <p>
+              Upload your document and tell us about your target role.
+            </p>
           </div>
 
           <span className="resume-step-label">STEP 1 OF 2</span>
@@ -224,7 +253,9 @@ function ResumeAnalyzer() {
 
             {!selectedFile ? (
               <div
-                className={`resume-dropzone ${dragging ? "dragging" : ""}`}
+                className={`resume-dropzone ${
+                  dragging ? "dragging" : ""
+                }`}
                 onDragOver={(event) => {
                   event.preventDefault();
                   setDragging(true);
@@ -241,7 +272,9 @@ function ResumeAnalyzer() {
                   className="resume-file-input"
                   type="file"
                   accept=".pdf,application/pdf"
-                  onChange={(event) => handleFile(event.target.files[0])}
+                  onChange={(event) =>
+                    handleFile(event.target.files[0])
+                  }
                 />
 
                 <label
@@ -264,7 +297,9 @@ function ResumeAnalyzer() {
                   from your device
                 </p>
 
-                <span>PDF format only · Maximum file size 10 MB</span>
+                <span>
+                  PDF format only · Maximum file size 10 MB
+                </span>
               </div>
             ) : (
               <div className="resume-selected-file">
@@ -274,9 +309,10 @@ function ResumeAnalyzer() {
 
                 <div className="resume-file-details">
                   <strong>{selectedFile.name}</strong>
+
                   <span>
-                    {(selectedFile.size / (1024 * 1024)).toFixed(2)} MB · PDF
-                    document
+                    {(selectedFile.size / (1024 * 1024)).toFixed(2)} MB
+                    {" "}· PDF document
                   </span>
                 </div>
 
@@ -300,7 +336,9 @@ function ResumeAnalyzer() {
 
               <div>
                 <h3>Tell us about your target role</h3>
-                <p>Customize the resume review for your career goal.</p>
+                <p>
+                  Customize the resume review for your career goal.
+                </p>
               </div>
             </div>
 
@@ -364,9 +402,10 @@ function ResumeAnalyzer() {
 
             <div className="resume-note">
               <Clock3 size={17} />
+
               <p>
-                This preview uses sample UI feedback. Actual resume analysis
-                will be connected separately.
+                This preview uses sample UI feedback. Actual resume
+                analysis will be connected separately.
               </p>
             </div>
 
@@ -376,7 +415,10 @@ function ResumeAnalyzer() {
               </p>
             )}
 
-            <button type="submit" className="resume-analyze-button">
+            <button
+              type="submit"
+              className="resume-analyze-button"
+            >
               <Sparkles size={18} />
               Preview analysis screen
               <ArrowRight size={18} />
@@ -388,20 +430,28 @@ function ResumeAnalyzer() {
           <section className="resume-preview-results">
             <div className="resume-preview-heading">
               <div>
-                <span className="resume-results-label">DESIGN PREVIEW</span>
+                <span className="resume-results-label">
+                  DESIGN PREVIEW
+                </span>
+
                 <h2>Resume review preview</h2>
+
                 <p>
                   {selectedFile.name} · {jobRole} · {experience}
                 </p>
               </div>
 
-              <span className="resume-demo-badge">Sample data</span>
+              <span className="resume-demo-badge">
+                Sample data
+              </span>
             </div>
 
             <div className="resume-preview-grid">
               <article className="resume-score-card">
                 <span>Resume score</span>
-                <strong>78<span>/100</span></strong>
+                <strong>
+                  78<span>/100</span>
+                </strong>
                 <p>Sample score for the UI preview</p>
               </article>
 
@@ -418,8 +468,8 @@ function ResumeAnalyzer() {
                 <Sparkles size={23} />
                 <h3>Areas to improve</h3>
                 <p>
-                  Tailor your experience to the target role and use clear,
-                  specific bullet points.
+                  Tailor your experience to the target role and use
+                  clear, specific bullet points.
                 </p>
               </article>
             </div>

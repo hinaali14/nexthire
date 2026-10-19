@@ -1,3 +1,4 @@
+
 import {
   LayoutDashboard,
   FileText,
@@ -14,6 +15,17 @@ import {
 import "./App.css";
 
 function Dashboard() {
+  function openPage(page) {
+    const events = {
+      dashboard: "open-dashboard",
+      resume: "open-resume-analyzer",
+      "mock-interview": "open-mock-interview",
+      history: "open-interview-history",
+    };
+
+    window.dispatchEvent(new Event(events[page]));
+  }
+
   return (
     <div className="app">
       <aside className="sidebar">
@@ -24,27 +36,34 @@ function Dashboard() {
         <p className="menu-title">WORKSPACE</p>
 
         <nav className="navigation">
-          <button className="nav-item active">
+          <button
+            className="nav-item active"
+            onClick={() => openPage("dashboard")}
+          >
             <LayoutDashboard size={20} />
             Dashboard
           </button>
 
           <button
-  className="nav-item"
-  onClick={() => {
-    window.dispatchEvent(new Event("open-resume-analyzer"));
-  }}
->
-  <FileText size={20} />
-  Resume Analyzer
-</button>
+            className="nav-item"
+            onClick={() => openPage("resume")}
+          >
+            <FileText size={20} />
+            Resume Analyzer
+          </button>
 
-          <button className="nav-item">
+          <button
+            className="nav-item"
+            onClick={() => openPage("mock-interview")}
+          >
             <MessageSquare size={20} />
             Mock Interview
           </button>
 
-          <button className="nav-item">
+          <button
+            className="nav-item"
+            onClick={() => openPage("history")}
+          >
             <History size={20} />
             Interview History
           </button>
@@ -53,13 +72,17 @@ function Dashboard() {
         <div className="sidebar-bottom">
           <div className="upgrade-card">
             <Sparkles size={24} />
+
             <h3>Ready to level up?</h3>
 
             <p>
               Practice smarter and prepare for your dream job.
             </p>
 
-            <button className="upgrade-button">
+            <button
+              className="upgrade-button"
+              onClick={() => openPage("mock-interview")}
+            >
               Start practicing <ArrowRight size={16} />
             </button>
           </div>
@@ -82,10 +105,15 @@ function Dashboard() {
 
       <main className="main-content">
         <header className="topbar">
-          <p className="breadcrumb">Workspace / Dashboard</p>
+          <p className="breadcrumb">
+            Workspace / Dashboard
+          </p>
 
           <div className="topbar-right">
-            <button className="icon-button" aria-label="Notifications">
+            <button
+              className="icon-button"
+              aria-label="Notifications"
+            >
               <Bell size={20} />
             </button>
 
@@ -107,7 +135,10 @@ function Dashboard() {
             </p>
           </div>
 
-          <button className="primary-button">
+          <button
+            className="primary-button"
+            onClick={() => openPage("mock-interview")}
+          >
             <Sparkles size={18} />
             Start a mock interview
           </button>
@@ -130,7 +161,10 @@ function Dashboard() {
               and prepare for your dream role.
             </p>
 
-            <button className="hero-button">
+            <button
+              className="hero-button"
+              onClick={() => openPage("mock-interview")}
+            >
               Start practicing <ArrowRight size={18} />
             </button>
           </div>
@@ -183,7 +217,9 @@ function Dashboard() {
           <div className="section-heading">
             <div>
               <h2>Tools to help you succeed</h2>
-              <p>Your personal toolkit for interview preparation.</p>
+              <p>
+                Your personal toolkit for interview preparation.
+              </p>
             </div>
           </div>
 
@@ -194,20 +230,20 @@ function Dashboard() {
               </div>
 
               <span className="tool-label">AI POWERED</span>
+
               <h3>Resume Analyzer</h3>
 
               <p>
                 Analyze your resume and discover strengths
                 and areas for improvement.
               </p>
-<button
-  className="text-button"
-  onClick={() => {
-    window.dispatchEvent(new Event("open-resume-analyzer"));
-  }}
->
-  Analyze my resume <ArrowRight size={17} />
-</button>
+
+              <button
+                className="text-button"
+                onClick={() => openPage("resume")}
+              >
+                Analyze my resume <ArrowRight size={17} />
+              </button>
             </article>
 
             <article className="tool-card">
@@ -216,6 +252,7 @@ function Dashboard() {
               </div>
 
               <span className="tool-label">PRACTICE MODE</span>
+
               <h3>Mock Interview</h3>
 
               <p>
@@ -223,7 +260,10 @@ function Dashboard() {
                 your communication skills.
               </p>
 
-              <button className="text-button">
+              <button
+                className="text-button"
+                onClick={() => openPage("mock-interview")}
+              >
                 Start an interview <ArrowRight size={17} />
               </button>
             </article>

@@ -709,3 +709,198 @@
     font-size: 19px;
   }
 }
+/* NextHire - Dark Purple Mock Interview Theme */
+
+.mock-main {
+  color: #f8fafc;
+}
+
+.mock-heading h1,
+.mock-section-heading h2,
+.mock-option strong,
+.mock-setup-summary strong,
+.mock-room-header h2,
+.mock-answer-card > label {
+  color: #f8fafc !important;
+}
+
+.mock-heading h1 svg,
+.mock-heading-badge svg,
+.mock-room-label,
+.mock-room-footer svg {
+  color: #c4b5fd !important;
+}
+
+.mock-heading-badge,
+.mock-setup-card,
+.mock-room-header,
+.mock-progress,
+.mock-answer-card {
+  background: #111a2e !important;
+  border-color: #293650 !important;
+  color: #cbd5e1;
+}
+
+.mock-hero,
+.mock-question-card {
+  background: linear-gradient(
+    115deg,
+    #171334,
+    #312064 60%,
+    #43318a
+  ) !important;
+}
+
+.mock-hero-content h2 span {
+  color: #c4b5fd !important;
+}
+
+.mock-hero-content p,
+.mock-section-heading p,
+.mock-option small,
+.mock-setup-summary p,
+.mock-room-header p,
+.mock-progress-info,
+.mock-demo-note,
+.mock-room-footer {
+  color: #94a3b8 !important;
+}
+
+.mock-hero-label,
+.mock-hero-circle {
+  background: #211a3d !important;
+  color: #c4b5fd !important;
+}
+
+.mock-hero-circle svg:last-child {
+  background: #111a2e !important;
+  color: #c4b5fd !important;
+}
+
+.mock-section-heading > span {
+  background: #211a3d !important;
+  color: #c4b5fd !important;
+}
+
+.mock-option {
+  background: #0b1120 !important;
+  border-color: #293650 !important;
+  color: #cbd5e1 !important;
+}
+
+.mock-option:hover {
+  border-color: #8b5cf6 !important;
+}
+
+.mock-option.selected {
+  background: #211a3d !important;
+  border-color: #8b5cf6 !important;
+  color: #c4b5fd !important;
+}
+
+.mock-option.selected strong {
+  color: #f8fafc !important;
+}
+
+.mock-option .mock-option-check {
+  color: #c4b5fd !important;
+}
+
+.mock-field > label {
+  color: #dbe4f0 !important;
+}
+
+.mock-field select,
+.mock-difficulty,
+.mock-duration,
+.mock-exit-button {
+  background: #0b1120 !important;
+  border-color: #293650 !important;
+  color: #cbd5e1 !important;
+}
+
+.mock-field select:focus {
+  border-color: #8b5cf6 !important;
+  box-shadow: 0 0 0 3px #8b5cf625 !important;
+}
+
+.mock-difficulty:hover,
+.mock-duration:hover,
+.mock-exit-button:hover {
+  border-color: #8b5cf6 !important;
+  color: #c4b5fd !important;
+}
+
+.mock-difficulty.selected,
+.mock-duration.selected {
+  background: #211a3d !important;
+  border-color: #8b5cf6 !important;
+  color: #c4b5fd !important;
+}
+
+.mock-difficulty.selected .mock-difficulty-dot {
+  background: #a78bfa !important;
+}
+
+.mock-difficulty-dot {
+  background: #64748b;
+}
+
+.mock-setup-summary {
+  background: #17152c !important;
+  border-color: #39305c !important;
+}
+
+.mock-summary-icon,
+.mock-bot-icon {
+  background: #211a3d !important;
+  color: #c4b5fd !important;
+}
+
+.mock-start-button,
+.mock-next-button {
+  background: linear-gradient(100deg, #7c3aed, #6366f1) !important;
+  color: #fff !important;
+}
+
+.mock-start-button:hover:not(:disabled),
+.mock-next-button:hover {
+  background: #6d28d9 !important;
+}
+
+.mock-progress-track {
+  background: #293650 !important;
+}
+
+.mock-progress-fill {
+  background: linear-gradient(90deg, #8b5cf6, #38bdf8) !important;
+}
+
+.mock-answer-card textarea {
+  background: #0b1120 !important;
+  border-color: #293650 !important;
+  color: #f8fafc !important;
+}
+
+.mock-answer-card textarea::placeholder {
+  color: #7888a3 !important;
+}
+
+.mock-answer-card textarea:focus {
+  border-color: #8b5cf6 !important;
+  box-shadow: 0 0 0 3px #8b5cf625 !important;
+}
+
+.mock-demo-feedback {
+  background: #17152c !important;
+  border-color: #39305c !important;
+  color: #c4b5fd !important;
+}
+
+.mock-demo-feedback p {
+  color: #cbd5e1 !important;
+}
+
+.mock-room-footer {
+  color: #94a3b8 !important;
+}

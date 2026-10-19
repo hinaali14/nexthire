@@ -1,9 +1,14 @@
+```css
+/* =========================================
+   NEXTHIRE - DARK PREMIUM LOGIN THEME
+========================================= */
+
 .login-page {
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 100vh;
-  background: #ffffff;
-  color: #163b38;
+  background: #080d1b;
+  color: #f8fafc;
   font-family: "Inter", sans-serif;
 }
 
@@ -17,13 +22,10 @@
   min-height: 100vh;
   padding: 42px 9%;
   overflow: hidden;
-  color: #ffffff;
-  background: linear-gradient(
-    145deg,
-    #134e4a 0%,
-    #0f766e 60%,
-    #2a9d8f 100%
-  );
+  color: #f8fafc;
+  background:
+    radial-gradient(ellipse at 15% 85%, #31216b 0%, transparent 45%),
+    linear-gradient(145deg, #080d1b 0%, #111a35 60%, #1c1640 100%);
 }
 
 .login-logo {
@@ -32,7 +34,7 @@
   align-items: center;
   gap: 12px;
   width: fit-content;
-  color: #ffffff;
+  color: #f8fafc;
   text-decoration: none;
   font-size: 25px;
   font-weight: 800;
@@ -44,9 +46,10 @@
   place-items: center;
   width: 43px;
   height: 43px;
-  color: #134e4a;
-  background: #ffffff;
+  color: #ffffff;
+  background: linear-gradient(135deg, #8b5cf6, #6366f1);
   border-radius: 12px;
+  box-shadow: 0 0 25px #8b5cf640;
 }
 
 .brand-content {
@@ -60,9 +63,9 @@
   align-items: center;
   gap: 8px;
   padding: 9px 12px;
-  color: #e0f5ed;
-  background: #ffffff15;
-  border: 1px solid #ffffff30;
+  color: #d8ccff;
+  background: #8b5cf61c;
+  border: 1px solid #a78bfa45;
   border-radius: 30px;
   font-size: 10px;
   font-weight: 700;
@@ -71,7 +74,7 @@
 
 .brand-content h1 {
   margin: 25px 0 18px;
-  color: #ffffff;
+  color: #f8fafc;
   font-size: clamp(36px, 4vw, 57px);
   font-weight: 800;
   line-height: 1.16;
@@ -79,12 +82,12 @@
 }
 
 .brand-content h1 span {
-  color: #bce8de;
+  color: #a78bfa;
 }
 
 .brand-content > p {
   max-width: 390px;
-  color: #e0f2ee;
+  color: #b6c1d5;
   font-size: 14px;
   line-height: 1.9;
 }
@@ -95,9 +98,10 @@
   gap: 14px;
   margin-top: 38px;
   padding: 18px;
-  background: #ffffff12;
-  border: 1px solid #ffffff25;
+  background: #ffffff08;
+  border: 1px solid #8b5cf630;
   border-radius: 14px;
+  backdrop-filter: blur(12px);
 }
 
 .feature-icon {
@@ -106,31 +110,31 @@
   width: 43px;
   height: 43px;
   flex-shrink: 0;
-  color: #134e4a;
-  background: #dff5ed;
+  color: #ffffff;
+  background: #8b5cf6;
   border-radius: 12px;
 }
 
 .brand-feature strong {
-  color: #ffffff;
+  color: #f8fafc;
   font-size: 12px;
 }
 
 .brand-feature p {
   margin: 6px 0 0;
-  color: #d7ede7;
+  color: #aab6cc;
   font-size: 11px;
 }
 
 .brand-footer {
   z-index: 1;
-  color: #d4eae5;
+  color: #94a3b8;
   font-size: 10px;
 }
 
 .decorative-circle {
   position: absolute;
-  border: 1px solid #ffffff12;
+  border: 1px solid #a78bfa20;
   border-radius: 50%;
   pointer-events: none;
 }
@@ -140,6 +144,7 @@
   right: -160px;
   width: 370px;
   height: 370px;
+  box-shadow: 0 0 100px #7c3aed12;
 }
 
 .circle-two {
@@ -155,7 +160,9 @@
   display: grid;
   place-items: center;
   padding: 45px 30px;
-  background: #f7f8f5;
+  background:
+    radial-gradient(ellipse at 100% 0%, #1e1b4b55, transparent 55%),
+    #0b1120;
 }
 
 .login-form-container {
@@ -167,7 +174,7 @@
   display: none;
   align-items: center;
   gap: 10px;
-  color: #0f766e;
+  color: #c4b5fd;
   font-size: 22px;
   font-weight: 800;
 }
@@ -177,7 +184,7 @@
 }
 
 .form-eyebrow {
-  color: #0f766e;
+  color: #a78bfa;
   font-size: 10px;
   font-weight: 800;
   letter-spacing: 1.7px;
@@ -185,7 +192,7 @@
 
 .form-heading h2 {
   margin: 13px 0 10px;
-  color: #163b38;
+  color: #f8fafc;
   font-size: clamp(24px, 2.5vw, 32px);
   font-weight: 800;
   letter-spacing: -1px;
@@ -193,7 +200,7 @@
 
 .form-heading > p {
   margin: 0;
-  color: #788783;
+  color: #94a3b8;
   font-size: 13px;
   line-height: 1.7;
 }
@@ -207,7 +214,7 @@
 .form-group label {
   display: block;
   margin-bottom: 9px;
-  color: #294743;
+  color: #dbe4f0;
   font-size: 12px;
   font-weight: 700;
 }
@@ -216,25 +223,23 @@
   width: 100%;
   height: 49px;
   padding: 0 14px;
-  color: #163b38;
-  background: #ffffff;
-  border: 1px solid #dce6e1;
+  color: #f8fafc;
+  background: #111a2e;
+  border: 1px solid #293650;
   border-radius: 9px;
   outline: none;
   font-family: inherit;
   font-size: 12px;
-  transition:
-    border-color 0.2s ease,
-    box-shadow 0.2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .form-group input::placeholder {
-  color: #a0ada8;
+  color: #7888a3;
 }
 
 .form-group input:focus {
-  border-color: #0f766e;
-  box-shadow: 0 0 0 3px #0f766e15;
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 3px #8b5cf625;
 }
 
 .password-label-row {
@@ -251,7 +256,7 @@
 .forgot-password {
   margin-bottom: 9px;
   padding: 0;
-  color: #0f766e;
+  color: #c4b5fd;
   background: transparent;
   border: 0;
   font-family: inherit;
@@ -274,14 +279,14 @@
   display: grid;
   place-items: center;
   padding: 5px;
-  color: #788783;
+  color: #94a3b8;
   background: transparent;
   border: 0;
   transform: translateY(-50%);
 }
 
 .password-toggle:hover {
-  color: #0f766e;
+  color: #c4b5fd;
 }
 
 /* Remember me */
@@ -291,7 +296,7 @@
   align-items: center;
   gap: 9px;
   margin: 3px 0 23px;
-  color: #52615f;
+  color: #b6c1d5;
   font-size: 12px;
   cursor: pointer;
 }
@@ -300,7 +305,7 @@
   width: 15px;
   height: 15px;
   margin: 0;
-  accent-color: #0f766e;
+  accent-color: #8b5cf6;
   cursor: pointer;
 }
 
@@ -309,9 +314,9 @@
 .login-error {
   margin: 0 0 16px;
   padding: 11px 12px;
-  color: #b42318;
-  background: #fef3f2;
-  border: 1px solid #fecdca;
+  color: #fecaca;
+  background: #7f1d1d35;
+  border: 1px solid #f8717145;
   border-radius: 8px;
   font-size: 12px;
   line-height: 1.6;
@@ -327,19 +332,18 @@
   width: 100%;
   min-height: 49px;
   color: #ffffff;
-  background: #0f766e;
-  border: 1px solid #0f766e;
+  background: linear-gradient(100deg, #7c3aed, #6366f1);
+  border: 1px solid #8b5cf6;
   border-radius: 9px;
   font-family: inherit;
   font-size: 13px;
   font-weight: 700;
-  transition:
-    background 0.2s ease,
-    transform 0.2s ease;
+  box-shadow: 0 5px 22px #7c3aed30;
+  transition: filter 0.2s ease, transform 0.2s ease;
 }
 
 .sign-in-button:hover {
-  background: #115e59;
+  filter: brightness(1.12);
   transform: translateY(-1px);
 }
 
@@ -347,14 +351,14 @@
 
 .signup-prompt {
   margin-top: 25px;
-  color: #788783;
+  color: #94a3b8;
   text-align: center;
   font-size: 12px;
 }
 
 .signup-prompt button {
   padding: 0;
-  color: #0f766e;
+  color: #c4b5fd;
   background: transparent;
   border: 0;
   font-family: inherit;
@@ -364,7 +368,7 @@
 
 .signup-prompt button:hover,
 .forgot-password:hover {
-  color: #115e59;
+  color: #ddd6fe;
   text-decoration: underline;
 }
 
@@ -374,7 +378,7 @@
   justify-content: center;
   gap: 8px;
   margin-top: 42px;
-  color: #788783;
+  color: #8492aa;
   font-size: 10px;
 }
 
